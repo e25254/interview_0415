@@ -11,6 +11,7 @@ i18n
 	// pass the i18n instance to react-i18next.
 	.use(initReactI18next)
 	.use(Backend)
+	// .use(resourcesToBackend((language, namespace) => import(`./locales/${language}/${namespace}.json`)))
 	// init i18next
 	// for all options read: https://www.i18next.com/overview/configuration-options
 	.init({
@@ -20,7 +21,7 @@ i18n
 			escapeValue: false, // not needed for react as it escapes by default
 		},
 		backend: {
-			loadPath: "/locales/{{lng}}/{{ns}}.json",
+			loadPath: "/interview_0415/locales/{{lng}}/{{ns}}.json",
 		},
 	});
 

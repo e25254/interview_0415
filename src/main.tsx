@@ -7,7 +7,7 @@ import "./index.css";
 import "./i18n";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
-	<BrowserRouter>
+	<BrowserRouter basename="/interview_0415">
 		<App />
 	</BrowserRouter>
 );
