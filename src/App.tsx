@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Navigate, Route, Routes, useLocation, useNavigate } from "react-router-dom";
 import "./App.css";
 import Home from "./page/Home";
 import I18nDemo from "./page/I18nDemo";
-import { useTranslation } from "react-i18next";
 import { isMatchIgnoreCase, languageList } from "./utils";
+import ErrorLng from "./page/ErrorLng";
+import { useTranslation } from "react-i18next";
 // import i18n from "./i18n";
 
 function App() {
@@ -12,35 +13,26 @@ function App() {
 	const path = useLocation();
 	const navigate = useNavigate();
 
-	const handleErrorLng = () => {
-		const currentLng = i18n.language;
-		const splitPathArray = path.pathname.split("/");
-		const nowLng = splitPathArray[1];
-		const fixPath = path.pathname.replace(nowLng, currentLng);
-		return nowLng ? fixPath : fixPath.replace(/\/$/, "");
-	};
+	// avoid waring about useEffect dependencies array
+	const pathRef = useRef(path);
 
 	useEffect(() => {
-		const currentLng = path.pathname.split("/")[1];
-
-		if (languageList.map((string) => string.toLocaleLowerCase()).indexOf(currentLng) === -1) return;
+		const currentLng = pathRef.current.pathname.split("/")[1];
+		if (currentLng === i18n.language) return;
+		if (languageList.map((string) => string.toLocaleLowerCase()).indexOf(currentLng.toLocaleLowerCase()) === -1) return;
 		const lngString = languageList.find((string) => isMatchIgnoreCase(string, currentLng));
-
-		// change url lng
-		const fixPath = path.pathname.replace(currentLng, lngString);
-		navigate(fixPath, { replace: true });
 
 		// change localStorage lng
 		i18n.changeLanguage(lngString);
-	}, [path, i18n, navigate]);
-
+	}, [i18n, navigate, pathRef]);
 	return (
 		<Routes>
 			{languageList.map((lng) => {
 				return (
 					<Route
 						key={lng}
-						path={`${lng}/*`}
+						path={`/${lng}/*`}
+						caseSensitive
 						element={
 							<Routes>
 								<Route
@@ -51,6 +43,15 @@ function App() {
 									path={"/i18n_demo"}
 									element={<I18nDemo />}
 								/>
+								<Route
+									path="/*"
+									element={
+										<Navigate
+											to={`/${lng}/home`}
+											replace
+										/>
+									}
+								/>
 							</Routes>
 						}
 					/>
@@ -58,12 +59,7 @@ function App() {
 			})}
 			<Route
 				path="/*"
-				element={
-					<Navigate
-						replace
-						to={handleErrorLng()}
-					/>
-				}
+				element={<ErrorLng />}
 			/>
 		</Routes>
 	);
