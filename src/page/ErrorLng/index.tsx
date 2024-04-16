@@ -14,7 +14,7 @@ export default function ErrorLng() {
 		const currentLng = i18n.language;
 		const splitPathArray = path.pathname.split("/");
 		const nowLng = splitPathArray[1];
-		const currentCaseLng = languageList.find((string) => string.toLocaleLowerCase() === nowLng.toLocaleLowerCase()) || currentLng;
+		const currentCaseLng = Object.keys(languageList).find((string) => string.toLocaleLowerCase() === nowLng.toLocaleLowerCase()) || currentLng;
 		const fixPath = path.pathname.replace(nowLng, currentCaseLng);
 		return fixPath;
 	};
