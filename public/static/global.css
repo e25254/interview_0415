@@ -12,6 +12,7 @@ body {
   background-color: var(--dark_font_color);
   & * {
     color: var(--light_font_color);
+    box-sizing: border-box;
     /* outline: 0.1px solid red; */
   }
 
@@ -66,6 +67,11 @@ body {
   }
 }
 
+.tiny_font {
+  font-size: 0.75rem;
+  line-height: 0.914375rem;
+}
+
 .icon_div {
   box-sizing: border-box;
   width: 1.5625rem;
@@ -88,6 +94,7 @@ body {
   border-radius: 4px;
   p {
     color: var(--primary_color);
+    white-space: nowrap;
   }
   .icon_div {
     padding: 0.32875rem 0.32875rem 0.32875rem 0rem;
@@ -158,29 +165,64 @@ body {
       }
     }
   }
-  .card_text {
-    display: flex;
-    flex-direction: column;
-    gap: 0.3125rem;
-    h5 {
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
-      -webkit-line-clamp: 2;
-      overflow: hidden;
-    }
-    h6 {
-      &:nth-child(2) {
-        color: var(--primary_color);
-      }
-      &:nth-child(3) {
-        color: var(--gray_color);
-      }
-    }
-  }
+
   .outline_button {
     width: 100%;
     padding-left: 0rem;
     padding-right: 0rem;
     margin-top: auto;
+  }
+}
+
+.card_text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  h5 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+  h6 {
+    &:nth-child(2) {
+      color: var(--primary_color);
+    }
+    &:nth-child(3) {
+      color: var(--gray_color);
+    }
+  }
+}
+
+.tag_card {
+  background-color: var(--second_color);
+  width: 17.5rem;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  aspect-ratio: 1/1;
+  padding: 4.25rem 3.125rem;
+  border: 1px solid var(--primary_color);
+  position: relative;
+  .outline_button {
+    padding: 0.46875rem 2.6875rem;
+  }
+  .tag_flag {
+    position: absolute;
+    width: 0;
+    height: 0;
+    top: 0;
+    left: 0;
+    border-top: 100px solid var(--primary_color);
+    border-right: 100px solid transparent;
+  }
+  .tiny_font {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    white-space: nowrap;
+    color: var(--dark_font_color);
+    translate: -25% 55%;
+    rotate: 315deg;
   }
 }
