@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RWD-2-3</title>
+    <link rel="stylesheet" type="text/css" href="./reset.css" />
+    <link rel="stylesheet" type="text/css" href="./global.css" />
+    <link rel="stylesheet" type="text/css" href="./rwd-3.css" />
+  </head>
+  <body>
+    <main>
+      <div class="rwd_3_container">
+        <div class="form_div stack">
+          <!-- SideBar -->
+          <div class="sidebar_div">
+            <h4 class="sidebar_title">側邊選單標題</h4>
+
+            <!-- Computer view -->
+            <ul class="option_list">
+              <li class="common_font">選單1</li>
+              <li class="common_font">選單2</li>
+              <li class="common_font">選單3</li>
+              <li class="common_font">選單4</li>
+              <li class="bold_font choose">
+                選單5
+                <img src="./icon/arrow_right_grow.svg" />
+              </li>
+            </ul>
+            <!-- ***** -->
+
+            <!-- mobile view -->
+            <select class="option_select common_input">
+              <option value="1">選單1</option>
+              <option value="2">選單2</option>
+              <option value="3">選單3</option>
+              <option value="4">選單4</option>
+              <option value="5" selected>選單5</option>
+            </select>
+            <!-- ***** -->
+          </div>
+          <!-- ***** -->
+
+          <!-- form content -->
+          <div class="form_content_div">
+            <div class="input_group">
+              <!-- input item -->
+              <div class="input_item">
+                <h5 class="input_name common_font">
+                  欄位：一般欄位<span>*</span>
+                </h5>
+                <input type="text" class="common_input" value="輸入欄位資料" />
+              </div>
+              <!-- ***** -->
+              <!-- input item -->
+              <div class="input_item">
+                <h5 class="input_name common_font">
+                  欄位：不可修改的欄位<span>*</span>
+                </h5>
+                <input
+                  type="text"
+                  disabled
+                  class="common_input"
+                  value="不可修改的欄位資料"
+                />
+              </div>
+              <!-- ***** -->
+              <!-- input item -->
+              <div class="input_item">
+                <h5 class="input_name common_font">
+                  欄位：一般欄位<span>*</span>
+                </h5>
+                <input type="text" class="common_input" value="輸入欄位資料" />
+              </div>
+              <!-- ***** -->
+              <!-- input item -->
+              <div class="input_item">
+                <h5 class="input_name common_font">
+                  欄位：一般欄位<span>*</span>
+                </h5>
+                <input type="text" class="common_input" value="輸入欄位資料" />
+              </div>
+              <!-- ***** -->
+              <!-- input item -->
+              <div class="input_item">
+                <h5 class="input_name common_font">
+                  欄位：一般欄位<span>*</span>
+                </h5>
+                <input type="text" class="common_input" value="輸入欄位資料" />
+              </div>
+              <!-- ***** -->
+            </div>
+            <!-- Explanatory text block-->
+            <div class="explanatory_text_div">
+              <h4 class="explanatory_title">我是不規則比例寬度區塊</h4>
+              <div class="explanatory_content">
+                <div class="content_text">
+                  <h4>標題</h4>
+                  <p>
+                    其他說明文字，其他說明文字，其他說明文字，其他說明文字，其他說明文字，其他說明文字。
+                  </p>
+                  <p>
+                    外連連結樣式：<a target="_blank" href="https://google.com"
+                      >這裡是連結樣式喔。</a
+                    >
+                  </p>
+                </div>
+                <div class="content_img">
+                  <img src="./image/cat.png" />
+                </div>
+                <div class="content_list">
+                  <h4 class="list_title">補充說明標題</h4>
+                  <ul>
+                    <li>說明文字</li>
+                    <li>說明文字</li>
+                    <li>說明文字</li>
+                    <li>說明文字</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <!-- submit button group -->
+            <div class="submit_button_group">
+              <div class="submit_button cancel">重填</div>
+              <div class="submit_button save">儲存</div>
+            </div>
+          </div>
+          <!-- ***** -->
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

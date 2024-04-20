@@ -82,6 +82,27 @@ body {
   }
 }
 
+.common_input {
+  border-radius: 2px;
+  background-color: #eeeeee;
+  color: var(--dark_font_color);
+  width: 100%;
+  height: 3rem;
+  border: none;
+  padding: 0.75rem 0.9375rem;
+
+  &:focus-visible {
+    outline: none;
+  }
+  &[type="text"] {
+    border: 1px solid #ccc;
+  }
+  &:disabled {
+    background-color: #999999;
+    cursor: not-allowed;
+  }
+}
+
 .outline_button {
   box-sizing: border-box;
   user-select: none;
@@ -114,6 +135,8 @@ body {
   font-size: 1.125rem;
   padding: 0.75rem 3.875rem;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
   &.save {
     background-color: var(--primary_color);
     color: var(--second_color);
