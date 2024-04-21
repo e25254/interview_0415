@@ -57,7 +57,11 @@ function App() {
                   {routerArray.map((route) => {
                     const RouteComponent = route.element;
                     return (
-                      <Route path={route.path} element={<RouteComponent />} />
+                      <Route
+                        key={route.id}
+                        path={route.path}
+                        element={<RouteComponent />}
+                      />
                     );
                   })}
                   <Route

@@ -11,7 +11,7 @@ export default function Header() {
 
   const handleSelectChange = (event) => {
     const selectOption = routerArray.find(
-      (route) => route.name === event.target.value
+      (route) => route.id === parseInt(event.target.value)
     );
     const lng = i18n.language;
     const newPath = `/${lng}${selectOption.path}`;
@@ -24,13 +24,15 @@ export default function Header() {
       (route) => `/${currentPath}` === route.path
     );
     if (selectOption) setSelectId(selectOption.id);
-  }, [selectId]);
+  }, [selectId, path]);
 
   return (
     <div>
-      <select onChange={handleSelectChange}>
+      <select onChange={handleSelectChange} value={selectId}>
         {routerArray.map((route) => (
-          <option selected={route.id === selectId}>{route.name}</option>
+          <option key={route.id} value={route.id}>
+            {route.name}
+          </option>
         ))}
       </select>
     </div>

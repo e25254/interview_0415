@@ -1,9 +1,8 @@
-import React from "react";
 import { languageList } from "../../utils";
 import { Trans, useTranslation } from "react-i18next";
 import { useLocation, useNavigate } from "react-router-dom";
 
-export default function Home() {
+export default function Home(): JSX.Element {
   const { t } = useTranslation();
   const path = useLocation();
   const navigate = useNavigate();

@@ -1,6 +1,7 @@
 import { FunctionComponent } from "react";
 import Home from "./page/Home";
 import I18nDemo from "./page/I18nDemo";
+import AsyncAwaitDemo from "./page/AsyncAwaitDemo";
 
 export const languageList: { [key: string]: string } = {
   "zh-TW": "繁體中文",
@@ -31,5 +32,11 @@ export const routerArray: {
     path: "/i18n_demo",
     name: "i18nDemo1",
     element: I18nDemo,
+  },
+  {
+    id: 3,
+    path: "/async_await_demo",
+    name: "AsyncAwaitDemo",
+    element: AsyncAwaitDemo,
   },
 ];
