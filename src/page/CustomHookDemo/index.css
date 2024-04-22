@@ -1,0 +1,10 @@
+.custom_hook_demo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  & > div {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+  }
+}
