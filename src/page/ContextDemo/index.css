@@ -1,0 +1,14 @@
+.context_demo {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+  & > div {
+    display: flex;
+    gap: 5rem;
+    word-break: break-word;
+    & > div {
+      width: 200px;
+      min-height: 400px;
+    }
+  }
+}

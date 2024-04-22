@@ -3,6 +3,7 @@ import Home from "./page/Home";
 import I18nDemo from "./page/I18nDemo";
 import AsyncAwaitDemo from "./page/AsyncAwaitDemo";
 import CustomHookDemo from "./page/CustomHookDemo";
+import ContextDemo from "./page/ContextDemo";
 
 export const languageList: { [key: string]: string } = {
   "zh-TW": "繁體中文",
@@ -45,5 +46,11 @@ export const routerArray: {
     path: "/custom_hook_demo",
     name: "CustomHookDemo",
     element: CustomHookDemo,
+  },
+  {
+    id: 5,
+    path: "/context_demo",
+    name: "ContextDemo",
+    element: ContextDemo,
   },
 ];
