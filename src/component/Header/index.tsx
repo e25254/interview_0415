@@ -1,4 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, {
+  ChangeEvent,
+  SelectHTMLAttributes,
+  useEffect,
+  useState,
+} from "react";
 import { routerArray } from "../../utils";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
@@ -9,9 +14,9 @@ export default function Header() {
   const path = useLocation();
   const { i18n } = useTranslation();
 
-  const handleSelectChange = (event) => {
+  const handleSelectChange = (event: ChangeEvent<HTMLSelectElement>) => {
     const selectOption = routerArray.find(
-      (route) => route.id === parseInt(event.target.value)
+      (_, routeIndex) => routeIndex === parseInt(event.target.value)
     );
     const lng = i18n.language;
     const newPath = `/${lng}${selectOption.path}`;
@@ -20,17 +25,17 @@ export default function Header() {
 
   useEffect(() => {
     const currentPath = path.pathname.split("/")[2];
-    const selectOption = routerArray.find(
+    const selectOptionIndex = routerArray.findIndex(
       (route) => `/${currentPath}` === route.path
     );
-    if (selectOption) setSelectId(selectOption.id);
+    if (selectOptionIndex) setSelectId(selectOptionIndex);
   }, [selectId, path]);
 
   return (
     <div>
       <select onChange={handleSelectChange} value={selectId}>
-        {routerArray.map((route) => (
-          <option key={route.id} value={route.id}>
+        {routerArray.map((route, routeIndex) => (
+          <option key={routeIndex} value={routeIndex}>
             {route.name}
           </option>
         ))}

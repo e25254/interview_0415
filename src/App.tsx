@@ -54,11 +54,11 @@ function App() {
               caseSensitive
               element={
                 <Routes>
-                  {routerArray.map((route) => {
+                  {routerArray.map((route, routeIndex) => {
                     const RouteComponent = route.element;
                     return (
                       <Route
-                        key={route.id}
+                        key={routeIndex}
                         path={route.path}
                         element={<RouteComponent />}
                       />

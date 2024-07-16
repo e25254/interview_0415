@@ -7,6 +7,7 @@ import ContextDemo from "./page/ContextDemo";
 import HOCDemo from "./page/HOCDemo";
 import TestPage from "./page/TestPage";
 import TestPage2 from "./page/TestPage2";
+import FormDemo from "./page/FormDemo";
 
 export const languageList: { [key: string]: string } = {
   "zh-TW": "繁體中文",
@@ -21,57 +22,53 @@ export const isMatchIgnoreCase = (stringA: string, stringB: string) => {
 };
 
 export const routerArray: {
-  id: number;
   path: string;
   name: string;
   element: FunctionComponent;
 }[] = [
   {
-    id: 1,
     path: "/home",
     name: "i18nDemo",
     element: Home,
   },
   {
-    id: 2,
     path: "/i18n_demo",
     name: "i18nDemo1",
     element: I18nDemo,
   },
   {
-    id: 3,
     path: "/async_await_demo",
     name: "AsyncAwaitDemo",
     element: AsyncAwaitDemo,
   },
   {
-    id: 4,
     path: "/custom_hook_demo",
     name: "CustomHookDemo",
     element: CustomHookDemo,
   },
   {
-    id: 5,
     path: "/context_demo",
     name: "ContextDemo",
     element: ContextDemo,
   },
   {
-    id: 6,
     path: "/HOC_demo",
     name: "HOCDemo",
     element: HOCDemo,
   },
   {
-    id: 7,
     path: "/test_page",
     name: "TestPage",
     element: TestPage,
   },
   {
-    id: 8,
     path: "/test_page2",
     name: "TestPage2",
     element: TestPage2,
+  },
+  {
+    path: "/form_demo",
+    name: "FormDemo",
+    element: FormDemo,
   },
 ];
