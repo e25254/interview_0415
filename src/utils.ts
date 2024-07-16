@@ -5,6 +5,8 @@ import AsyncAwaitDemo from "./page/AsyncAwaitDemo";
 import CustomHookDemo from "./page/CustomHookDemo";
 import ContextDemo from "./page/ContextDemo";
 import HOCDemo from "./page/HOCDemo";
+import TestPage from "./page/TestPage";
+import TestPage2 from "./page/TestPage2";
 
 export const languageList: { [key: string]: string } = {
   "zh-TW": "繁體中文",
@@ -59,5 +61,17 @@ export const routerArray: {
     path: "/HOC_demo",
     name: "HOCDemo",
     element: HOCDemo,
+  },
+  {
+    id: 7,
+    path: "/test_page",
+    name: "TestPage",
+    element: TestPage,
+  },
+  {
+    id: 8,
+    path: "/test_page2",
+    name: "TestPage2",
+    element: TestPage2,
   },
 ];
